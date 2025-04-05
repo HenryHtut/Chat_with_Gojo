@@ -106,8 +106,8 @@ st.set_page_config(page_title="Gojo Chatbot 💙", layout="wide")
 st.title("💙 Talk to Gojo Satoru!")
 
 # Secure API Key
-
-client = groq.Client(api_key="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")
+api_key = os.getenv("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")
+client = groq.Client(api_key=api_key)
 
 def load_css(css_file):
     with open(css_file, "r") as f:
