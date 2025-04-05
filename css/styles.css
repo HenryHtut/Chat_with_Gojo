@@ -1,9 +1,10 @@
 /* --- General Styles --- */
 body {
-    background-color: #0d0d0d;
-    color: white;
+    margin: 0;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Example gradient */
     font-family: Arial, sans-serif;
 }
+
 
 /* --- Title Styling --- */
 .title {
@@ -35,9 +36,10 @@ body {
 
 .gojo-msg {
     background-color: #5a189a;
-    color: white;
+    color: black;
     align-self: flex-start;
 }
+
 
 /* --- Avatars --- */
 .avatar {

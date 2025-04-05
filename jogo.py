@@ -2,7 +2,7 @@ import streamlit as st
 import groq
 import os
 from dotenv import load_dotenv
-
+import base64
 st.set_page_config(page_title="Gojo Chatbot 💙", layout="wide")
 st.title("💙 Talk to Gojo Satoru!")
 
@@ -11,13 +11,16 @@ load_dotenv()  # Load environment variables from .env file
 api_key = os.getenv("GROQ_API_KEY")  # Get the API key from environment variables
 client = groq.Client(api_key=api_key)
 
-def load_css(css_file):
-    with open(css_file, "r") as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+with open("css/styles.css", "r") as f:
+    css_content = f.read()
+    print(css_content)  # Print the CSS content to confirm it's being loaded
+    st.markdown(f"<style>{css_content}</style>", unsafe_allow_html=True)
+
 
 
 # Load Custom CSS
-load_css("styles.css")
+
 
 # ---- Title ----
 hide_st_style = """
@@ -28,6 +31,13 @@ hide_st_style = """
             </style>
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
+
+def get_image_base64(file_path):
+    with open(file_path, "rb") as img_file:
+        encoded = base64.b64encode(img_file.read()).decode()
+        return f"data:image/png;base64,{encoded}"
+
+gojo_avatar = get_image_base64("image.png") 
 
 # Initialize chat history
 if "messages" not in st.session_state:
@@ -56,22 +66,19 @@ def chat_with_gojo(prompt):
         return f"Error: {str(e)}"
 
 # Display chat history
-for message in st.session_state.messages[1:]:  
-    with st.chat_message(message["role"]):
-        if message["role"] == "assistant":
-            st.image("image.png", width=40)  # Gojo PFP
-        else:
-            st.image("image2.png", width=40)  # User PFP
+for message in st.session_state.messages[1:]:
+    if message["role"] == "assistant":
+        with st.chat_message("assistant", avatar=gojo_avatar):
+            st.write(message["content"])
+    else:
+        with st.chat_message("user"):
+            st.write(message["content"])
 
-        st.write(message["content"])
-
-# Chat input field
+# Chat input
 user_input = st.chat_input("Type a message...")
 if user_input:
     with st.chat_message("user"):
         st.write(user_input)
-
     gojo_reply = chat_with_gojo(user_input)
-
-    with st.chat_message("assistant"):
+    with st.chat_message("assistant", avatar=gojo_avatar):
         st.write(gojo_reply)
