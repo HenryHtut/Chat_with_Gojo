@@ -101,12 +101,14 @@
 import streamlit as st
 import groq
 import os
+from dotenv import load_dotenv
 
 st.set_page_config(page_title="Gojo Chatbot 💙", layout="wide")
 st.title("💙 Talk to Gojo Satoru!")
 
 # Secure API Key
-api_key = os.getenv("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")
+load_dotenv()  # Load environment variables from .env file
+api_key = os.getenv("GROQ_API_KEY")  # Get the API key from environment variables
 client = groq.Client(api_key=api_key)
 
 def load_css(css_file):
