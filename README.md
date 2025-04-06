@@ -1,10 +1,10 @@
-# 🧠 Chat with Gojo – Groq-Powered Web Chatbot
+# Chat with Gojo – Groq-Powered Web Chatbot
 
 A fun and interactive chatbot powered by **Groq API** and **LLaMA3**, styled with the personality of *Satoru Gojo* from Jujutsu Kaisen. The bot responds in a playful, warm, and charismatic tone—just like Gojo-sensei would!
 
 ---
 
-## ✨ Features
+## Features
 
 - 💬 Chat interface built with **Streamlit**
 - ⚡ Fast and smart responses powered by **Groq's LLaMA3 model**
@@ -13,7 +13,7 @@ A fun and interactive chatbot powered by **Groq API** and **LLaMA3**, styled wit
 
 ---
 
-## 🧠 Model Info
+## Model Info
 
 - **Model Used**: `llama3-8b-8192`
 - **API**: [Groq API](https://console.groq.com/)
