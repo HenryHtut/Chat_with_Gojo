@@ -10,7 +10,7 @@ st.title(" Talk to Gojo Satoru!")
 
 # Secure API Key
 load_dotenv()  # Load environment variables from .env file
-api_key = os.getenv("GROQ_API_KEY")  # Get the API key from environment variables
+api_key = os.getenv("GROQ_API_KEY")
 client = groq.Client(api_key=api_key)
 
 
