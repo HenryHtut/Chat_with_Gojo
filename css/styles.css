@@ -24,6 +24,10 @@ body {
     border-radius: 40%;
     margin: 5px 0;
     max-width: 80%;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
 }
 
 .user-msg {
