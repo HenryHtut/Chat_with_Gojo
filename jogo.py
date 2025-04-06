@@ -3,8 +3,10 @@ import groq
 import os
 from dotenv import load_dotenv
 import base64
-st.set_page_config(page_title="Gojo Chatbot 💙", layout="wide")
-st.title("💙 Talk to Gojo Satoru!")
+st.set_page_config(page_title="Gojo Chatbot ",
+                   page_icon= "💥",
+                layout="wide")
+st.title(" Talk to Gojo Satoru!")
 
 # Secure API Key
 load_dotenv()  # Load environment variables from .env file
@@ -13,9 +15,8 @@ client = groq.Client(api_key=api_key)
 
 
 with open("css/styles.css", "r") as f:
-    css_content = f.read()
-    print(css_content)  # Print the CSS content to confirm it's being loaded
-    st.markdown(f"<style>{css_content}</style>", unsafe_allow_html=True)
+    
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 
 

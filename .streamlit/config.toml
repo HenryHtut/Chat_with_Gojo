@@ -1,12 +1,12 @@
 [theme]
 
 # Primary accent color for interactie elements
-primaryColor = "#66b933"
+primaryColor = "black"
 
-backgroundColor = "#000000"
+backgroundColor = "white"
 
-secondaryBackgroundColor = "#16141a"
+secondaryBackgroundColor = "white"
 
-textColor = "#FFF"
+textColor = "black"
 
-font = "sans serif"
+font = "monospace"
