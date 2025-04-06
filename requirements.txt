@@ -1,4 +1,3 @@
 streamlit # Adjust the version as needed, or use the latest version
 groq  # For the Groq client
 python-dotenv  # To load environment variables from .env              # Usually comes with Python, so you might not need to include it in requirements.txt
-os
