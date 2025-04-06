@@ -1,4 +1,4 @@
-streamlit==1.14.0  # Adjust the version as needed, or use the latest version
-groq==0.2.0        # For the Groq client
-python-dotenv==0.19.2  # To load environment variables from .env
+streamlit # Adjust the version as needed, or use the latest version
+groq  # For the Groq client
+dotenv  # To load environment variables from .env
 base64              # Usually comes with Python, so you might not need to include it in requirements.txt
